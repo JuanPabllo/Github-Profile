@@ -5,14 +5,14 @@ function Card(props) {
 
   useEffect(() => {
     async function fetchData() {
-      let username = props.username; // You can write your username here
+      let userName = props.userName; // You can write your username here
 
-      let dev_data = await fetch(
-        `https://dev.to/api/users/by_username?url=${username}`
+      let devData = await fetch(
+        `https://dev.to/api/users/by_username?url=${userName}`
       )
         .then((res) => res.json())
         .then((data) => data);
-      setUser(dev_data);
+      setUser(devData);
     }
     fetchData();
   }, []);
