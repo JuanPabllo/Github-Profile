@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
-function Card() {
+function Card(props) {
   const [user, setUser] = useState({});
 
   useEffect(() => {
     async function fetchData() {
-      let username = 'juanpabllo'; // You can write your username here
+      let userName = props.userName; // You can write your username here
 
       let dev_data = await fetch(
-        `https://dev.to/api/users/by_username?url=${username}`
+        `https://dev.to/api/users/by_username?url=${userName}`
       )
         .then((res) => res.json())
         .then((data) => data);
@@ -25,7 +25,7 @@ function Card() {
 
       <div className="user-info">
         <div className="name">{user.name}</div>
-        <div className="handle">@{user.username}</div>
+        <div className="handle">@{user.userName}</div>
         <div className="summary">{user.summary}</div>
       </div>
 
