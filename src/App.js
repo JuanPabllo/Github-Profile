@@ -4,7 +4,7 @@ import Card from './components/card'
 import Form from './components/form'
 
 function App() {
-  var nome = prompt('Qual é o seu nome?')
+  var nome = prompt('Qual seu nome de usuário do GitHub?')
 
   return (
     <div className='wrapper'>
